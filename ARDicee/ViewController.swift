@@ -82,6 +82,17 @@ class ViewController: UIViewController, ARSCNViewDelegate {
                     )
                 
                     sceneView.scene.rootNode.addChildNode(diceNode)
+                    
+                    let rendomX = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
+                    let rendomZ = Float(arc4random_uniform(4) + 1) * (Float.pi/2)
+                    
+                    diceNode.runAction(SCNAction.rotateBy(
+                        x: CGFloat(rendomX * 5),
+                        y: 0,
+                        z: CGFloat(rendomZ * 5),
+                        duration: 0.5)
+                    )
+
                 }
                 
             }
